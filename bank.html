@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bank-page">
+    <header>
+        <h1>Калкулатора на Тодор</h1>
+        <nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Начална страница</a></li>
+                    <li><a href="automobile.html">За автомобила</a></li>
+                    <li><a href="work.html">За работа</a></li>
+                    <li><a href="bank.html">В банката</a></li>
+                    <li><a href="health.html">Здраве</a></li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+
+    <main>
+        <section id="bank">
+            <h2>В банката</h2>
+            <div class="calculator">
+                <h3>Валутен калкулатор</h3>
+                <form id="exchangeContainer">
+                    <label for="amount">Сума за обръщане</label>
+                    <input type="number" id="amount" name="amount" required>
+                    
+                    <label for="exchange">Курс на желаната валута</label>
+                    <input type="number", step="0.00001" id="exchange" name="exchange" required>
+                    
+                    <button type="submit">Пресметни</button>
+                    <div id="exchangeResultContainer"></div> 
+                </form>
+            </div>
+        </section>
+    <table class="frame">
+            <tr>
+                <td colspan="2">
+                    <div id="result" class="width300 shown">
+                        <p><strong>Полезни връзки</strong></p>
+                        <p>Курс на валутите в БНБ - <a href="https://www.bnb.bg/Statistics/StExternalSector/StExchangeRates/StERForeignCurrencies/index.htm">Курс на валутите в БНБ</a></p>
+                        <p>Google Finance - <a href="https://www.google.com/finance/">Google Finance</a></p>
+                    </div>
+                </td>
+            </tr>
+    </table>
+        
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('exchangeContainer').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Get input values
+            var amount = parseFloat(document.getElementById('amount').value);
+            var exchange = parseFloat(document.getElementById('exchange').value);
+            
+            // Calculate salary
+            var sum = amount * exchange;
+            
+            // Display the result
+            document.getElementById('exchangeResultContainer').innerHTML = "Сума: " + sum.toFixed(2)
+        });
+    </script>
+</body>
+
+</html>

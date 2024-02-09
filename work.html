@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="work-page">
+    <header>
+        <h1>Калкулатора на Тодор</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начална страница</a></li>
+                <li><a href="automobile.html">За автомобила</a></li>
+                <li><a href="work.html">За работа</a></li>
+                <li><a href="bank.html">В банката</a></li>
+                <li><a href="health.html">Здраве</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="work">
+            <h2>Работа</h2>
+            <div class="calculator">
+                <h3>Калкулатор на заплата</h3>
+                <form id="salaryCalculatorForm">
+                    <label for="hourlyRate">Ставка на час:</label>
+                    <input type="number" id="hourlyRate" name="hourlyRate" required>
+                    
+                    <label for="hoursWorked">Работени часове на ден:</label>
+                    <input type="number" id="hoursWorked" name="hoursWorked" required>
+
+                    <label for="daysWorked">Отработени дни:</label>
+                    <input type="number" id="daysWorked" name="daysWorked" required>
+                    
+                    <button type="submit">Пресметни</button>
+                    <div id="salaryResultContainer"></div> <!-- Container for displaying the result -->
+                </form>
+            </div>
+        </section>
+        <table class="frame">
+            <tr>
+                <td colspan="2">
+                    <div id="result" class="width300 shown">
+                        <p><strong>Полезни връзки</strong></p>
+                        <p>Сайт за намиране на работа - <a href="https://www.jobs.bg/">Jobs.bg</a></p>
+                        <p>Документи за работа- <a href="https://mywork.bg/%d0%ba%d0%b0%d0%ba%d0%b2%d0%b8-%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d0%b8-%d1%82%d1%80%d1%8f%d0%b1%d0%b2%d0%b0-%d0%b4%d0%b0-%d0%bf%d1%80%d0%b5%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d1%8f/">MyWork.bg</a></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('salaryCalculatorForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Get input values
+            var hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
+            var hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
+            var daysWorked = parseFloat(document.getElementById('daysWorked').value);
+            
+            // Calculate salary
+            var salary = (hourlyRate * hoursWorked) * daysWorked;
+            
+            // Display the result
+            document.getElementById('salaryResultContainer').innerHTML = "Salary: $" + salary.toFixed(2);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="health-page">
+    <header>
+        <h1>Калкулатора на Тодор</h1>
+        <nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Начална страница</a></li>
+                    <li><a href="automobile.html">За автомобила</a></li>
+                    <li><a href="work.html">За работа</a></li>
+                    <li><a href="bank.html">В банката</a></li>
+                    <li><a href="health.html">Здраве</a></li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Здраве</h2>
+            <div class="calculator">
+                <h3>Калкулатор на калории</h3>
+                <label for="weight">Тегло (кг):</label>
+                <input type="number" id="weight" min="1" step="any">
+
+                <label for="height">Височина (см):</label>
+                <input type="number" id="height" min="1" step="any">
+
+                <label for="age">Години:</label>
+                <input type="number" id="age" min="1" step="1">
+
+                <label for="activity">Ниво на активност:</label>
+                <select id="activity">
+                    <option value="1.2">Заседнал (Малко или никаква физическа активност)</option>
+                    <option value="1.375">Слабо активен (Слабо активност/спрот 1-3 дена в седмицата)</option>
+                    <option value="1.55">Умерено активен (Умереана активност/спорт 3-5 дни в седмицата)</option>
+                    <option value="1.725">Много активен (Силна активност/спорт 6-7 дни в седмицата)</option>
+                    <option value="1.9">Изключително активен (Много трудни спортове или физическа работа)</option>
+                </select>
+
+                <button onclick="calculateCalories()">Пресметни</button>
+
+                <div id="result"></div>
+            </div>
+        </section>
+        <table class="frame">
+            <tr>
+                <td colspan="2">
+                    <div id="result" class="width300 shown">
+                        <p><strong>Полезни връзки</strong></p>
+                        <p></a></p>
+                        <p>База данни с калориите за всяка храна - <a href="https://www.calorieking.com/us/en/">calorieking.com</a></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function calculateCalories() {
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+            var age = parseInt(document.getElementById("age").value);
+            var activityLevel = parseFloat(document.getElementById("activity").value);
+
+            var bmr = 66.5 + (13.75 * weight) + (5.003 * height) - (6.75 * age);
+            var calories = Math.round(bmr * activityLevel);
+
+            document.getElementById("result").innerHTML = "Препоръчителен дневен прием: " + calories;
+        }
+    </script>
+</body>
+
+</html>
