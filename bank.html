@@ -11,16 +11,14 @@
 <body class="bank-page">
     <header>
         <h1>Калкулатора на Тодор</h1>
-        <nav>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Начална страница</a></li>
-                    <li><a href="automobile.html">За автомобила</a></li>
-                    <li><a href="work.html">За работа</a></li>
-                    <li><a href="bank.html">В банката</a></li>
-                    <li><a href="health.html">Здраве</a></li>
-                </ul>
-            </nav>
+        <button class="openbtn" onclick="toggleNav()">&#9776;</button>
+        <nav id="mySidepanel" class="sidepanel">
+            <br> </br>
+            <a href="index.html">Начална страница</a>
+            <a href="automobile.html">За автомобила</a>
+            <a href="work.html">За работа</a>
+            <a href="bank.html">В банката</a>
+            <a href="health.html">Здраве</a>
         </nav>
     </header>
 
@@ -61,6 +59,14 @@
     </footer>
 
     <script>
+        function toggleNav() {
+            var sidepanel = document.getElementById("mySidepanel");
+            if (sidepanel.style.width === "250px") {
+                sidepanel.style.width = "0";
+            } else {
+                sidepanel.style.width = "250px";
+            }
+        }
         document.getElementById('exchangeContainer').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
             
@@ -73,6 +79,7 @@
             
             // Display the result
             document.getElementById('exchangeResultContainer').innerHTML = "Сума: " + sum.toFixed(2)
+            
         });
     </script>
 </body>

@@ -10,9 +10,13 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: transparent; /* Remove background color */
+    color: #ffffff;
     padding: 20px;
+    text-align: center;
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
 
 header nav ul {
@@ -110,12 +114,6 @@ body {
 }
 
 /* Header styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
 
 header h1 {
     margin-bottom: 10px;
@@ -281,12 +279,6 @@ body.home-page::after {
 
 
 /* krai na bodito*/
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
 
 /*KOLA */
 body.-page::after {
@@ -312,20 +304,6 @@ body.work-page::after {
     z-index: -1; /* Place the overlay behind other content */
 }
 
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
 
 h1 {
     margin: 0;
@@ -409,3 +387,152 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+
+
+/* The sidepanel menu */
+.sidepanel {
+  height: 250px; /* Specify a height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* The sidepanel menu */
+.sidepanel {
+    height: 100%; /* Full height */
+    width: 0; /* 0 width - hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    position: fixed;
+    top: 43px;
+    left: 25px;
+    z-index: 2; /* Make sure it overlaps with the sidepanel */
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/* Content styling */
+.content-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.content-box {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.content-box h2 {
+    color: #333;
+}
+
+.content-box p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.content-box a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.content-box a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
